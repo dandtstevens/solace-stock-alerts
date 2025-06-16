@@ -6,6 +6,19 @@
   <title>Solace Stock Alerts</title>
   <link rel="manifest" href="manifest.json" />
 </head>
+<!-- OneSignal Push Integration -->
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "78cf44ab-6ed4-474e-ad21-dcb44c70308d",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
 <body>
   <h2>Solace Real-Time Stock Alerts</h2>
   <p>Click the button below to enable browser pings for breakout alerts (NCNA, RVYL, etc.):</p>
