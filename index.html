@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solace Stock Alerts</title>
   <link rel="manifest" href="manifest.json" />
-  <!-- OneSignal Push Integration -->
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+
+  <!-- ✅ OneSignal v16 SDK (Live Push Ready) -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-      OneSignal.init({
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      await OneSignal.init({
         appId: "78cf44ab-6ed4-474e-ad21-dcb44c70308d",
-        notifyButton: {
-          enable: true,
-        },
       });
     });
   </script>
