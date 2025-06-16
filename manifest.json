@@ -1,0 +1,10 @@
+{
+  "name": "Solace Stock Alerts",
+  "short_name": "Solace Alerts",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Real-time push alerts for stocks like NCNA.",
+  "icons": [],
+  "gcm_sender_id": "103953800507"
+}
