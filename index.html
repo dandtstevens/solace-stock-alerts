@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solace Stock Alerts</title>
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <h2>Solace Real-Time Stock Alerts</h2>
+  <button onclick="subscribeToAlerts()">Enable Alerts</button>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function(reg) {
+        console.log('Service worker registered.', reg);
+      });
+    }
+
+    function subscribeToAlerts() {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === 'granted') {
+          navigator.serviceWorker.ready.then(function(registration) {
+            registration.showNotification('Subscribed to Solace Alerts!');
+          });
+        } else {
+          alert('Please allow notifications to receive real-time stock alerts.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
